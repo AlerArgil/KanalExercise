@@ -32,3 +32,7 @@ https://drive.google.com/file/d/1uvEFea39T9TQJzpnDI86sjODzIK36jtJ/view?usp=shari
 2. Через вебхук google drive. Для его реализации необходимо выполнить команду
 python manage.py set_watcher
 предварительно указав в env файле GOOGLE_HTTPS_URL_NOTIFY как актуальный https роут до /test/ на текущем проекте
+
+
+сам файл для тестов доступен по ссылке
+https://docs.google.com/spreadsheets/d/1wh19iNoT1nQx1EoeDXzlODoY5892NL2WoQPRhUgvoy4/edit?usp=sharing
