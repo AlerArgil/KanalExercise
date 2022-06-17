@@ -22,3 +22,13 @@ python manage.py crontab add
 
 # Starting bot for notify delivery time
 python manage.py start_bot
+
+
+Для связи с гугл сервисами использовался сервис аккаунт. Получить данные от него можно при наличии доступа по ссылке
+https://drive.google.com/file/d/1uvEFea39T9TQJzpnDI86sjODzIK36jtJ/view?usp=sharing
+
+Реализованы два способа получение информации из файла.
+1. Через крон. Работает по умолчанию, обращается к файлу на предмет изменений каждую минуту
+2. Через вебхук google drive. Для его реализации необходимо выполнить команду
+python manage.py set_watcher
+предварительно указав в env файле GOOGLE_HTTPS_URL_NOTIFY как актуальный https роут до /test/ на текущем проекте

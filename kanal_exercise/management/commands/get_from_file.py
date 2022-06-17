@@ -4,7 +4,7 @@ from orders.models import create_order_from_sheet
 
 
 class Command(BaseCommand):
-    help = 'get info from file'
+    help = 'custom check creating order'
 
     def handle(self, *args, **options):
         create_order_from_sheet()

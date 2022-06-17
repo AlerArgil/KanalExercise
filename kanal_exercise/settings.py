@@ -158,10 +158,17 @@ CB_DOLLAR_ID = 'R01235'
 # https ссылка для работы  обновления файла через вебхук google drive
 GOOGLE_HTTPS_URL_NOTIFY = os.getenv('GOOGLE_HTTPS_URL_NOTIFY', '')
 
+# Список периодических задач
+# раз в сутки - актуализация курса доллара
+# каждую минуту проверка файла на изменение (для крон обработки файла)
+# Раз в сутки, рассылка сообщении телеграмм ботом о подходящем сроке доставки
+# Каждые 4 минуты проверка жизни ватчера за файлом (для вебхук обработки файла)
 CRONJOBS = [
     ('0 0 * * *', 'core.cron.set_exchange_rate'),
     ('* * * * *', 'orders.cron.cron_create_orders'),
-    ('* * * * *', 'telegram.cron.send_notification')
+    ('0 6 * * *', 'telegram.cron.send_notification'),
+    ('*/4 0 * * *', 'googleapi.cron.refresh_watcher')
 ]
 
-TELEGRAM_BOT_TOKEN = '5514683191:AAG0KBgZU8pdt1LinrHHz4Xdn9QxoL3TdgE'
+# Токен бота для рассылки
+TELEGRAM_BOT_TOKEN = os.getenv('TELEGRAM_BOT_TOKEN', '')
