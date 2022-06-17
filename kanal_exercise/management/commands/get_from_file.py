@@ -1,6 +1,5 @@
 from django.core.management.base import BaseCommand
 
-from core.models import Option
 from orders.models import create_order_from_sheet
 
 

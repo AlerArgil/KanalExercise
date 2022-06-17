@@ -21,9 +21,8 @@ class Option(models.Model):
             if el.tag == 'Value':
                 exchange_rate = float(el.text.replace(',', '.'))
         try:
-            cls.objects.update_or_create(
-                name='exchange_rate',
-                defaults={'value': exchange_rate}
-            )
+            option, created = cls.objects.get_or_create(name='exchange_rate')
+            option.value = exchange_rate
+            option.save()
         except NameError:
             pass

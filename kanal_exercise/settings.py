@@ -160,5 +160,8 @@ GOOGLE_HTTPS_URL_NOTIFY = os.getenv('GOOGLE_HTTPS_URL_NOTIFY', '')
 
 CRONJOBS = [
     ('0 0 * * *', 'core.cron.set_exchange_rate'),
-    ('* * * * *', 'orders.cron.cron_create_orders')
+    ('* * * * *', 'orders.cron.cron_create_orders'),
+    ('* * * * *', 'telegram.cron.send_notification')
 ]
+
+TELEGRAM_BOT_TOKEN = '5514683191:AAG0KBgZU8pdt1LinrHHz4Xdn9QxoL3TdgE'

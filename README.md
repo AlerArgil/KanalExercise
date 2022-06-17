@@ -14,8 +14,11 @@ pip install -r requirements.txt
 # Init migration
 python manage.py migrate
 
-# Creating superuser. Give him username and password
-python manage.py createsuperuser
+# Set actual exchange rate
+python manage.py set_exchange_rate
 
 # Create crontab jobs
 python manage.py crontab add
+
+# Starting bot for notify delivery time
+python manage.py start_bot
