@@ -17,5 +17,5 @@ python manage.py migrate
 # Creating superuser. Give him username and password
 python manage.py createsuperuser
 
-# Create crontab job
+# Create crontab jobs
 python manage.py crontab add

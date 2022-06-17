@@ -47,7 +47,7 @@ DJANGO_APPS = [
 ]
 
 # Inner apps Application
-INNER_APPS = ['orders', 'kanal_exercise']
+INNER_APPS = ['orders', 'kanal_exercise', 'googleapi', 'telegram', 'core']
 
 # External Application
 EXTERNAL_APPS = [
@@ -159,5 +159,6 @@ CB_DOLLAR_ID = 'R01235'
 GOOGLE_HTTPS_URL_NOTIFY = os.getenv('GOOGLE_HTTPS_URL_NOTIFY', '')
 
 CRONJOBS = [
-    ('*/5 * * * *', 'kanal_exercise.cron.my_scheduled_job')
+    ('0 0 * * *', 'core.cron.set_exchange_rate'),
+    ('* * * * *', 'orders.cron.cron_create_orders')
 ]
